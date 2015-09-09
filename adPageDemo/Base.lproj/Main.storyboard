@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F9p-WY-VZV">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="456"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Rc-8P-vgQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1000" id="RyU-id-xYm"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="5Rc-8P-vgQ" firstAttribute="leading" secondItem="F9p-WY-VZV" secondAttribute="leading" id="IX2-ZW-WML"/>
+                                    <constraint firstAttribute="bottom" secondItem="5Rc-8P-vgQ" secondAttribute="bottom" id="L9G-Yp-xwG"/>
+                                    <constraint firstAttribute="trailing" secondItem="5Rc-8P-vgQ" secondAttribute="trailing" id="LPO-6a-U0e"/>
+                                    <constraint firstItem="5Rc-8P-vgQ" firstAttribute="top" secondItem="F9p-WY-VZV" secondAttribute="top" id="cGQ-hG-pLd"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="r2v-eO-Wpe"/>
+                                </connections>
+                            </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5nk-4n-YKt" customClass="WMAdPageView">
+                                <rect key="frame" x="0.0" y="20" width="320" height="112"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="112" id="4Vf-Ih-VCI"/>
+                                    <constraint firstAttribute="width" secondItem="5nk-4n-YKt" secondAttribute="height" multiplier="16:11" id="7CN-wK-hf7"/>
+                                    <constraint firstAttribute="width" secondItem="5nk-4n-YKt" secondAttribute="height" multiplier="1029:360" id="wX5-lJ-Je1"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="7CN-wK-hf7"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zin-KG-CSa" customClass="WMAdPageFView">
+                                <rect key="frame" x="0.0" y="456" width="320" height="112"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="zin-KG-CSa" secondAttribute="height" multiplier="16:11" id="4zX-u6-gJn"/>
+                                    <constraint firstAttribute="width" secondItem="zin-KG-CSa" secondAttribute="height" multiplier="1029:360" id="JOB-8h-7XW"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="4zX-u6-gJn"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="zin-KG-CSa" secondAttribute="trailing" id="03a-JL-G5X"/>
+                            <constraint firstItem="5Rc-8P-vgQ" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" id="0EM-Zb-ubr"/>
+                            <constraint firstAttribute="trailing" secondItem="F9p-WY-VZV" secondAttribute="trailing" id="7Qe-hL-frm"/>
+                            <constraint firstItem="zin-KG-CSa" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Af5-mn-8ON"/>
+                            <constraint firstItem="zin-KG-CSa" firstAttribute="width" secondItem="zin-KG-CSa" secondAttribute="height" multiplier="16:11" id="Cj1-Gl-IQm"/>
+                            <constraint firstItem="zin-KG-CSa" firstAttribute="top" secondItem="F9p-WY-VZV" secondAttribute="bottom" id="Je5-Ut-fIo"/>
+                            <constraint firstAttribute="trailing" secondItem="5nk-4n-YKt" secondAttribute="trailing" id="Lua-Pf-oKx"/>
+                            <constraint firstAttribute="centerX" secondItem="5nk-4n-YKt" secondAttribute="centerX" id="WSq-Ko-c53"/>
+                            <constraint firstItem="5nk-4n-YKt" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="cdk-Sp-UdH"/>
+                            <constraint firstItem="F9p-WY-VZV" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="f5y-D4-jic"/>
+                            <constraint firstItem="F9p-WY-VZV" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="lcS-xq-SKq"/>
+                            <constraint firstItem="5nk-4n-YKt" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="rlO-LQ-AS5"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="zin-KG-CSa" secondAttribute="bottom" id="zz8-I2-Tit"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Lua-Pf-oKx"/>
+                                <exclude reference="rlO-LQ-AS5"/>
+                                <exclude reference="Cj1-Gl-IQm"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="adPageFView" destination="zin-KG-CSa" id="kR4-FP-kKR"/>
+                        <outlet property="adPageView" destination="5nk-4n-YKt" id="q38-hd-gC4"/>
+                        <outlet property="headHLayout" destination="4Vf-Ih-VCI" id="5dT-dg-wPl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

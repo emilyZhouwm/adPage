@@ -248,8 +248,19 @@
     [self reloadImages];
 }
 
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    if ([_autoRollTimer isValid]) {
+        [_autoRollTimer invalidate];
+        _autoRollTimer = nil;
+    }
+}
+
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
+    if (_bAutoRoll) {
+        _autoRollTimer = [NSTimer scheduledTimerWithTimeInterval:kAutoRollTime target:self selector:@selector(scrollTimer) userInfo:nil repeats:YES];
+    }
     _indexShow = scrollView.contentOffset.x / self.frame.size.width - 1;
     [self reloadImages];
 }

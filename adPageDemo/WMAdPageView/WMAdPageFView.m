@@ -38,10 +38,17 @@
     return self;
 }
 
+- (void)updateConstraints
+{
+    [super updateConstraints];
+    self.scView.contentInset = UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0);
+}
+
 - (void)layoutSubviews
 {
     [super layoutSubviews];
     if (_scView) {
+        self.scView.contentInset = UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0);
         [_scView setFrame:self.bounds];
 
         for (int i=0; i<_scImgView.count; i++) {

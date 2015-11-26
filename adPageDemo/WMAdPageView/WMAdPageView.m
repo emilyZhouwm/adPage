@@ -47,10 +47,17 @@ static Class _cellClass = nil;
     return self;
 }
 
+- (void)updateConstraints
+{
+    [super updateConstraints];
+    self.scView.contentInset = UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0);
+}
+
 - (void)layoutSubviews
 {
     [super layoutSubviews];
     if (_scView) {
+        self.scView.contentInset = UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0);
         [_scView setFrame:self.bounds];
 
         [_imgPrev setFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];

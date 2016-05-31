@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet WMAdPageView *adPageView;
 @property (weak, nonatomic) IBOutlet WMAdPageFView *adPageFView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *headHLayout;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *headTopLayout;
 
 @end
 
@@ -54,6 +55,11 @@
 {
     if (scrollView.contentOffset.y < 0) {
         _headHLayout.constant = _HeadHeight - scrollView.contentOffset.y;
+        if (_headTopLayout.constant != 0) {
+            _headTopLayout.constant = 0;
+        }
+    } else {
+        _headTopLayout.constant = -scrollView.contentOffset.y;
     }
 }
 
